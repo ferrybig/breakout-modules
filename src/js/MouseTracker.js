@@ -136,8 +136,8 @@ export default class MouseTracker {
 				region.mouseInside = mouseInside;
 			}
 			const movement = this.hasLock ? {
-				x: event.movementX / this.canvasOffset.scale,
-				y: event.movementY / this.canvasOffset.scale,
+				x: event.movementX * this.canvasOffset.scale,
+				y: event.movementY * this.canvasOffset.scale,
 			} : null;
 			for (const mouseListener of this.mouseListeners) {
 				mouseListener.move(point, movement, event);
